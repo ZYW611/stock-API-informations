@@ -1,0 +1,36 @@
+接口地址：http://data.tehir.cn/url/Api/ApiInterface.ashx
+请求方法：GET
+
+
+请求参数：
+参数名	类型	必填	描述
+data	string	是	季报发布日期(每年03-31，06-30，09-30，12-31)，格式yyyy-mm-dd;例如2015-09-30 有效交易日期
+code	string	是	取票代码6位 例如300082 必须有效股票代码 可为空
+flag	string	是	必填填写sdgd
+apikey	string	是	API密钥
+
+
+请求示例：
+http://123.57.249.182:8080/URL/Api/ApiInterface.ashx?apikey=您自己的apikey&flag=sdgd&data=2015-09-30&code=300082
+
+
+JSON返回示例：
+{
+	"total":1,//返回行数
+	"success:"true,//成功 true/失败 false
+	"info":"",//返回false时出现系统提示，返回true时为空；例如：“数据读取异常等”
+	"rows":[//结果集 false
+		{
+			 "createtime":"2015-11-20 00:00:00",//系统更新时间（系统处理时间无意义）
+			 "com_uni_code":"300082",//股票代码
+			 "com_full_name":"",
+			 "end_date":"2015-09-30 00:00:00",//公告日期
+			 "decl_date":"2015-09-30 00:00:00",//发布日期
+			 "hld_num":2,//排名
+			 "hld_name":"李云春",//持股人
+			 "hld_vol":46800000,//持有量
+			 "hld_ratio":6.9440,//占比
+			 "hld_kind":"流通A股"//持股类型
+		}
+	]
+}
