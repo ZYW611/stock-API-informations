@@ -1,0 +1,52 @@
+接口地址 :http://apis.baidu.com/showapi_open_bus/stock_his/sh_stock_his
+请求方法 :GET
+
+请求参数(header) :
+参数名	类型	必填	参数位置	描述		默认值
+apikey  string	是	header	        API密钥 	您自己的apikey
+
+请求参数(urlParam) :
+参数名	类型	必填	参数位置	描述						默认值
+begin  	string	是	urlParam	开始日期，格式yyyy-MM-dd			2015-09-01
+end	string	是	urlParam	结束日期，格式yyyy-MM-dd，注意时间范围为31天	2015-09-02
+code	string	是	urlParam	股票编码，不需要写市场名			600004
+
+
+请求示例 :
+curl  --get --include  'http://apis.baidu.com/showapi_open_bus/stock_his/sh_stock_his?begin=2015-09-01&end=2015-09-02&code=600004'  -H 'apikey:您自己的apikey'
+
+
+JSON返回示例 :
+{
+	"showapi_res_code": 0,//系统级是否成功,0为成功，其他失败
+	"showapi_res_error": "",//失败提示信息，比如网络中断
+	"showapi_res_body": {
+		"list": [
+			{
+				"close_price": "12.480", //收盘价
+				"code": "600004",//股票编码
+				"date": "2015-09-02", // 日期
+				"market": "sh", //市场代码
+				"max_price": "12.700", //最高价
+				"min_price": "11.510", //最低价
+				"open_price": "11.700", //开盘价
+				"stockName": "白云机场", //股票名称
+				"trade_money": "215834624", //交易金额
+				"trade_num": "17541504" //交易数量
+			},
+			{
+				"close_price": "12.110",
+				"code": "600004",
+				"date": "2015-09-01",
+				"market": "sh",
+				"max_price": "12.680",
+				"min_price": "11.920",
+				"open_price": "12.680",
+				"stockName": "白云机场",
+				"trade_money": "99310240",
+				"trade_num": "8111935"
+			}
+		],
+		"ret_code": 0//业务级是否成功,0为成功，其他失败
+	}
+}
