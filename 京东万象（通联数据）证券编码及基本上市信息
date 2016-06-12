@@ -1,0 +1,29 @@
+京东万象（通联数据）证券编码及基本上市信息
+
+标示：getSecID
+接口地址：https://way.jd.com/datayes/getSecID
+请求方式：HTTPS GET POST
+请求示例：https://way.jd.com/datayes/getSecID?ticker=000001&assetClass=E&cnSpell=PAYH&appkey=您申请的APPKEY
+
+请求参数
+名称		类型	必填	示例值	描述
+partyID		Number	否		机构ID，assetClass为股票和债券时，是发行人的机构ID；assetClass为基金时，是基金管理人的机构ID；assetClass为指数时，是指数发布机构ID。（可多值输入）
+ticker		String	否	000001	证券在交易所的交易代码，可输入一个或多个，用","分隔，如"000001"、"000001,600001"。（可多值输入）
+assetClass	String	否	E	证券类型，可供选择类型：E 股票,B 债券,F 基金,IDX 指数,FU 期货,OP 期权。
+cnSpell		String	否	PAYH	通过输入证券简称拼音的方式，获取证券交易代码等信息，拼音以使用汉字拼音首位连接，如“平安银行”，即“PAYH”。
+field		String	否		可选参数，用,分隔,默认为空，返回全部字段，不选即为默认值。返回字段见下方
+
+返回示例值
+返回参数可选 JSON
+字段 		类型 	描述
+secID		string	证券ID
+ticker		string	交易代码
+secShortName	string	证券简称
+cnSpell		string	证券简称拼音
+exchangeCD	string	交易市场
+assetClass	string	证券类型
+listStatusCD	string	上市状态，L——上市，S——暂停，DE——已退市，UN——未上市
+listDate	date	上市日期
+transCurrCD	string	交易货币
+ISIN		string	ISIN编码
+partyID		int64	机构ID
