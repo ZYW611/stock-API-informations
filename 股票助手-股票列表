@@ -1,0 +1,42 @@
+接口地址：http://data.tehir.cn/url/Api/ApiInterface.ashx
+请求方法：GET
+
+
+请求参数：
+参数名	类型	必填	描述
+page	string	是	分页的当前页数必须大于0的整数
+rows	string	是	分页的当前页的获取必须大于0的整数
+flag	string	是	必填填写stocklist
+apikey	string	是	API密钥
+
+
+请求示例：
+http://123.57.249.182:8080/URL/ApiApiInterface.ashx?apikey=您自己的apikey&flag=stocklist&page=1&rows=20
+
+
+JSON返回示例：
+{
+	"total":37,//返回行数
+	"success:"true,//成功 true/失败 false
+	"info":"",//返回false时出现系统提示，返回true时为空；例如：“数据读取异常等”
+	"rows":[//数据集合
+		{
+			 "code":"000557",//代码
+			 "name":"ST广夏",//名称
+			 "industry":"红黄药酒",//所属行业
+			 "area":宁夏,//地区
+			 "pe":32757.73,//市盈率
+			 "outstanding":66800.49,//流通股本
+			 "totals":68613.39,//总股本(万)
+			 "totalassets":27413.40,//总资产(万)
+			 "liquidassets":24440.85,//流动资产
+			 "fixedassets":1843.70,//固定资产
+			 "reserved":101737.15,//公积金
+			 "reservedpershare":1.48,//每股公积金
+			 "eps":0,//每股收益
+			 "bvps":0.21,//每股净资
+			 "pb":27.85,//市净率
+			 "timetomarket":"1994-06-17 00:00:00"//上市日期
+		}
+	]
+}
