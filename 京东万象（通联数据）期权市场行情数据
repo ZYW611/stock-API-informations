@@ -1,0 +1,51 @@
+京东万象（通联数据）期权市场行情数据
+
+标示：getOptionTick
+接口地址：https://way.jd.com/datayes/getOptionTick
+请求方式：HTTPS GET POST
+请求示例：https://way.jd.com/datayes/getOptionTick?appkey=您申请的APPKEY
+
+请求参数： 
+名称		类型	必填	示例值	描述
+optionId	String	否		期权代码，如果为空，返回当前所有期权
+
+返回示例值
+返回值可选 格式json
+字段		类型	描述
+timestamp	Int64	交易所时间戳（Unix时间）
+dataDate	string	交易日期（yyyy-MM-dd）
+dataTime	string	交易时间'HH:mm:ss'
+optionId	string	期权代码
+instrumentID	string	期权编码
+preSettlePrice	double	昨日结算价
+settlePrice	double	今日结算价
+openPrice	double	开盘价
+volume		Int64	成交数
+value		double	成交金额
+highPrice	double	最高价
+lowPrice	double	最低价
+lastPrice	double	现价
+bidBook_price1	double	一档买入价格
+bidBook_volume1	int64	一档买入交易量
+bidBook_price2	double	二档买入价格
+bidBook_volume2	int64	二档买入交易量
+bidBook_price3	double	三档买入价格
+bidBook_volume3	int64	三档买入交易量
+bidBook_price4	double	四档买入价格
+bidBook_volume4	int64	四档买入交易量
+bidBook_price5	double	五档买入价格
+bidBook_volume5	int64	五档买入交易量
+askBook_price1	double	一档卖出价格
+askBook_volume1	int64	一档卖出交易量
+askBook_price2	double	二档卖出价格
+askBook_volume2	int64	二档卖出交易量
+askBook_price3	double	三档卖出价格
+askBook_volume3	int64	三档卖出交易量
+askBook_price4	double	四档卖出价格
+askBook_volume4	int64	四档卖出交易量
+askBook_price5	double	五档卖出价格
+askBook_volume5	int64	五档卖出交易量
+auctionPrice	double	波动性中断参考价
+auctionQty	int64	波动性中断集合竞价虚拟匹配量
+totalLongPosition	double	当前合约未平仓数量
+origTime	int32	行情更新时间
