@@ -1,0 +1,62 @@
+京东万象（通联数据）期货市场行情数据
+
+标示：getFuTickRTShot
+接口地址：https://way.jd.com/datayes/getFuTickRTShot
+请求方式：HTTPS GET POST
+请求示例：https://way.jd.com/datayes/getFuTickRTShot?instrumentID=&appkey=您申请的APPKEY
+
+请求参数 
+名称		类型	必填	示例值	描述
+instrumentID	String	是		一只或多只期货代码，若空，则表示获取所有上市期货的行情数据
+
+
+返回示例值 格式JSON
+返回值可选
+字段			类型	描述
+instrumentID		string	期货合约代码，如'IF1412'
+timestamp		int64	交易所时间戳(UNIX时间)
+dataDate		string	交易日期(年月日部分)(yyyy-MM-dd)
+dataTime		string	交易时间(时分秒部分)(HH:mm:ss)
+dataMillisec		int32	交易时间(毫秒部分)
+prevClosePrice		double	昨收盘价格
+openPrice		double	今日开盘价
+volume			int64	成交数量
+value			double	成交金额
+highPrice		double	最高价格
+lowPrice		double	最低价格
+lastPrice		double	最新价格
+exchangeCD		string	交易所代码
+openInterest		int64	持仓量
+preOpenInterest		int64	昨日持仓量
+upperLimitPrice		double	涨停板价
+lowerLimitPrice		double	跌停板价
+preSettlementPrice	double	昨日结算价
+settlementPrice		double	今日结算价
+closePrice		double	今日收盘价
+preDelta		double	昨日虚实度(IF和TF合约类型的期货，该字段为空)
+currDelta		double	今日虚实度(IF和TF合约类型的期货，该字段为空)
+clearingDay		int32	业务日期
+bidBook_price1		double	一档买入价格(指数该字段为空)
+bidBook_volume1		int64	一档买入交易量(指数该字段为空)
+bidBook_price2		double	二档买入价格(指数该字段为空)
+bidBook_volume2		int64	二档买入交易量(指数该字段为空)
+bidBook_price3		double	三档买入价格(指数该字段为空)
+bidBook_volume3		int64	三档买入交易量(指数该字段为空)
+bidBook_price4		double	四档买入价格(指数该字段为空)
+bidBook_volume4		int64	四档买入交易量(指数该字段为空)
+bidBook_price5		double	五档买入价格(指数该字段为空)
+bidBook_volume5		int64	五档买入交易量(指数该字段为空)
+askBook_price1		double	一档卖出价格(指数该字段为空)
+askBook_volume1		int64	一档卖出交易量(指数该字段为空)
+askBook_price2		double	二档卖出价格(指数该字段为空)
+askBook_volume2		int64	二档卖出交易量(指数该字段为空)
+askBook_price3		double	三档卖出价格(指数该字段为空)
+askBook_volume3		int64	三档卖出交易量(指数该字段为空)
+askBook_price4		double	四档卖出价格(指数该字段为空)
+askBook_volume4		int64	四档卖出交易量(指数该字段为空)
+askBook_price5		double	五档卖出价格(指数该字段为空)
+askBook_volume5		int64	五档卖出交易量(指数该字段为空)
+milliSecOffset		int64	交易时间，表示为相对0点的毫秒偏移量
+localTimestamp		int64	DataYes本地接收时间戳(Unix时间)
+currencyCD		string	货币代码(CNY)
+utcOffset		string	UTC 时间偏移
