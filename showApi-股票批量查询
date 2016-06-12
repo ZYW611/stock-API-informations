@@ -1,0 +1,143 @@
+接口地址 :http://apis.baidu.com/showapi_open_bus/stock/stock_realtime_batch
+请求方法 :GET
+
+请求参数(header) :
+参数名	类型	必填	参数位置	描述		默认值
+apikey	string	是	header		API密钥		您自己的apikey
+
+请求参数(urlParam) :
+参数名	类型	必填	参数位置	描述										默认值
+stocks	string	是	urlParam	股票编码，需要带上市场名称。多个股票代码间以英文逗号分隔，最多输入200个代码。	sh601006,sh601007,sh601008,sh601009,sz000018,hk00941
+
+请求示例 :
+curl  --get --include  'http://apis.baidu.com/showapi_open_bus/stock/stock_realtime_batch?stocks=sh601006%2Csh601007%2Csh601008%2Csh601009%2Csz000018%2Chk00941'  -H 'apikey:您自己的apikey'
+
+
+JSON返回示例 :
+{
+	"showapi_res_code": 0, //易源是否代理成功，0为成功，其他失败
+	"showapi_res_error": "", //失败时的易源错误提示，比如网络中断
+	"showapi_res_body": {
+		"list": [
+			{
+				"buy1_m": "15.46",//买一金额
+				"buy1_n": "33264",//买一数量
+				"buy2_m": "15.45",//买二金额
+				"buy2_n": "48893",//买二数量
+				"buy3_m": "15.44",//买三金额
+				"buy3_n": "46300",//买三数量
+				"buy4_m": "15.43",//买四金额
+				"buy4_n": "182700",//买四数量
+				"buy5_m": "15.42",//买五金额
+				"buy5_n": "150250",//买五数量
+				"closePrice": "15.32",//昨日收盘价
+				"competBuyPrice": "15.46",//竞买价
+				"competSellPrice": "15.49",//竞卖价
+				"date": "2015-06-12",//时间
+				"name": "万  科Ａ",//股票名称
+				"nowPrice": "15.46",//当前价格
+				"openPrice": "15.35",//今日开盘
+				"sell1_m": "15.49",//卖一金额
+				"sell1_n": "300",//卖一数量
+				"sell2_m": "15.50",//卖二金额
+				"sell2_n": "33700",//卖二数量
+				"sell3_m": "15.51",//卖三金额
+				"sell3_n": "500600",//卖三数量
+				"sell4_m": "15.52",//卖四金额
+				"sell4_n": "126934",//卖四数量
+				"sell5_m": "15.53",//卖五金额
+				"sell5_n": "136400",//卖五数量
+				"time": "11:35:56",//时间
+				"todayMax": "15.66",//今日最高
+				"todayMin": "15.30", //今日最低
+				"tradeAmount": "2290181433.71", //交易金额
+				"tradeNum": "147905284" //交易数量
+			},
+			{
+				"buy1_m": "15.46",//买一金额
+				"buy1_n": "33264",//买一数量
+				"buy2_m": "15.45",//买二金额
+				"buy2_n": "48893",//买二数量
+				"buy3_m": "15.44",//买三金额
+				"buy3_n": "46300",//买三数量
+				"buy4_m": "15.43",//买四金额
+				"buy4_n": "182700",//买四数量
+				"buy5_m": "15.42",//买五金额
+				"buy5_n": "150250",//买五数量
+				"closePrice": "15.32",//昨日收盘价
+				"competBuyPrice": "15.46",//竞买价
+				"competSellPrice": "15.49",//竞卖价
+				"date": "2015-06-12",//时间
+				"name": "金陵饭店",//股票名称
+				"nowPrice": "15.46",//当前价格
+				"openPrice": "15.35",//今日开盘
+				"sell1_m": "15.49",//卖一金额
+				"sell1_n": "300",//卖一数量
+				"sell2_m": "15.50",//卖二金额
+				"sell2_n": "33700",//卖二数量
+				"sell3_m": "15.51",//卖三金额
+				"sell3_n": "500600",//卖三数量
+				"sell4_m": "15.52",//卖四金额
+				"sell4_n": "126934",//卖四数量
+				"sell5_m": "15.53",//卖五金额
+				"sell5_n": "136400",//卖五数量
+				"time": "11:35:56",//时间
+				"todayMax": "15.66",//今日最高
+				"todayMin": "15.30", //今日最低
+				"tradeAmount": "2290181433.71", //交易金额
+				"tradeNum": "147905284" //交易数量
+			} 
+		],
+            "indexList": [ //股票指数
+            {
+                "code": "sh000001", //编码
+                "maxPrice": 3621.897, //最高价
+                "minPrice": 3574.39,//最低价
+                "name": "上证指数", //指数名称
+                "nowPrice": 3580.184, //当前价
+                "time": "2015-11-27 11:35:42", //时间
+                "todayOpenPrice": 3616.544,// 今日开盘
+                "tradeAmount": 198346042723, //交易金额
+                "tradeNum": 142798690, //交易量
+                "yestodayClosePrice": 3635.552 //昨日收盘价
+            },
+            {
+                "code": "sz399001",
+                "maxPrice": 12733.452,
+                "minPrice": 12563.05,
+                "name": "深证成指",
+                "nowPrice": 12587.174,
+                "time": "2015-11-27 11:35:54",
+                "todayOpenPrice": 12697.507,
+                "tradeAmount": 306971787815.5,
+                "tradeNum": 15962812161,
+                "yestodayClosePrice": 12767.502
+            },
+            {
+                "code": "sz399005",
+                "maxPrice": 8637.341,
+                "minPrice": 8520.92,
+                "name": "中小板指",
+                "nowPrice": 8538.523,
+                "time": "2015-11-27 11:35:54",
+                "todayOpenPrice": 8605.614,
+                "tradeAmount": 33644662620.8,
+                "tradeNum": 1478262433,
+                "yestodayClosePrice": 8655.057
+            },
+            {
+                "code": "sz399006",
+                "maxPrice": 2844.053,
+                "minPrice": 2792.579,
+                "name": "创业板指",
+                "nowPrice": 2798.723,
+                "time": "2015-11-27 11:35:54",
+                "todayOpenPrice": 2819.364,
+                "tradeAmount": 31421266662.38,
+                "tradeNum": 1046911425,
+                "yestodayClosePrice": 2833.198
+            }
+        ],
+		"ret_code": 0//业务成功标识，0为成功，其他失败
+	}
+}
