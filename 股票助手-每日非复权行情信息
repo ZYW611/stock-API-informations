@@ -1,0 +1,44 @@
+接口地址：http://data.tehir.cn/url/Api/ApiInterface.ashx
+请求方法：GET
+
+
+请求参数：
+参数名	类型	必填	描述
+apikey	string	是	API密钥
+date	string	是	季报发布日期(每年03-31，06-30，09-30，12-31)，格式yyyy-mm-dd;例如2
+code	string	是	取票代码6位 例如000913 可为空
+flag	string	是	必填填写hist_date
+
+
+请求示例：
+http://123.57.249.182:8080/URL/Api/ApiInterface.ashx?apikey=您自己的apikey&flag=hist_date&date=2015-09-30&code=000913
+
+
+JSON返回示例：
+{
+	"total":1,//返回行数
+	"success:"true,//成功 true/失败 false
+	"info":"",//返回false时出现系统提示，返回true时为空；例如：“数据读取异常等”
+	"rows":[//结果集 false
+		{
+			 "code":"000913",//股票代码
+			 "open":"8.96",开盘价
+			 "high":"9",//最高价
+			 "close":8.98,//收盘价(万)
+			 "low":8.8,//最低价
+			 "volume":"601614.06",//成交量
+			 "price_change":"-0.06",//价格变动
+
+			 "p_change":"-0.66",//涨跌幅
+			 "ma5":"9.0180",//5日均价
+			 "ma10":"9.0840",//10日均价
+			 "ma20":"8.9370",//20日均价
+			 "v_ma5":"706298.98",//5日均量
+			 "v_ma10":"858243.28",//10日均量
+			 "v_ma20":"881749.50",//20日均量
+			 "turnover":"0.03",//换手率
+			 "trade_date":"2015-11-25 00:00:00"//交易日期
+		
+		}
+	]
+}
