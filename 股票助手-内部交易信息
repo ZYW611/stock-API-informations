@@ -1,0 +1,38 @@
+接口地址：http://data.tehir.cn/url/Api/ApiInterface.ashx
+请求方法：GET
+
+
+请求参数：
+参数名	类型	必填	描述
+date	string	是	季报发布日期(每年03-31，06-30，09-30，12-31)，格式yyyy-mm-dd;例如2015-09-30 有效交易日期
+flag	string	是	必填填写neibujiaoyi
+apikey	string	是	API密钥
+
+
+请求示例：
+http://123.57.249.182:8080/URL/Api/ApiInterface.ashx?apikey=您自己的apikey&flag=neibujiaoyi&date=2015-09-30
+
+
+JSON返回示例：
+{
+	"total":1,//返回行数
+	"success:"true,//成功 true/失败 false
+	"info":"",//返回false时出现系统提示，返回true时为空；例如：“数据读取异常等”
+	"rows":[//结果集 false
+		{
+			 "trade_date":"2015-11-20 00:00:00",//交易日期
+			 "stockcode":"002223",//股票代码
+			 "stockname":"鱼跃医疗",股票名称
+			 "changekind":"出售",//变动类型
+			 "changenum":"-1000",//变动股数
+			 "price":42.61,//成交价格(元)
+			 "changeprice":4.36,//变动金额(万元)
+			 "hldnum":"不详",//变动后持股数
+			 "reasons":"竞价交易",//变动原因
+			 "hldkind":"A股",//持股种类
+			 "relationship":"眭秀华,兄弟姐妹",//与董监高关系
+			 "position":"董事",//董监高职务
+			 "changer":"眭秀芳"//变动人
+		}
+	]
+}
