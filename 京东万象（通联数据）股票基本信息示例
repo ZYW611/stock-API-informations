@@ -1,0 +1,38 @@
+# 京东万象（通联数据）股票基本信息示例
+
+标示：getFdmtEe
+接口地址：https://way.jd.com/datayes/getEqu
+请求方式：HTTPS GET POST
+请求示例：https://way.jd.com/datayes/getEqu?ticker=000001&equTypeCD=A&appkey=您申请的APPKEY
+
+请求参数： 
+名称	  类型    必填	示例值	描述
+secID	  String  否		三选一	证券内部编码，可通过交易代码和交易市场在getSecurityID获取到。（可多值输入）
+ticker	  String  是	000001	股票交易代码，如'000001'（可多值输入）
+equTypeCD String  是	A	股票分类编码，输入A或B可查询获取到A股或B股
+field	  String  否		可选参数，用,分隔,默认为空，返回全部字段，不选即为默认值
+
+
+返回示例值：
+返回参数可选 格式JSON
+字段	        	类型    描述
+secID	        	string	证券ID
+ticker	        	string	交易代码
+exchangeCD		string	交易市场
+ListSectorCD		int32	上市板块编码
+ListSector		string	上市板块
+transCurrCD		string	交易货币
+secShortName		string	证券简称
+secFullName		string	证券全称
+listStatusCD		string	上市状态
+listDate		date	上市日期
+delistDate		date	摘牌日期
+equTypeCD		string	股票分类编码
+equType	        	string	股票类别
+exCountryCD		string	交易市场所属地区
+partyID			int64	机构内部ID
+totalShares		double	总股本(最新)
+nonrestFloatShares	Double	公司无限售流通股份合计(最新)
+nonrestfloatA		double	无限售流通股本(最新)。如果为A股，该列为最新无限售流通A股股本数量；如果为B股，该列为最新流通B股股本数量
+officeAddr		String	办公地址
+primeOperating		text	主营业务范围
