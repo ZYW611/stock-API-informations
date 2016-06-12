@@ -1,0 +1,20 @@
+京东万象（通联数据）沪深股票键盘精灵
+
+标示：getEquInfo
+接口地址：https://way.jd.com/datayes/getEquInfo
+请求方式：HTTPS GET POST
+请求示例：https://way.jd.com/datayes/getEquInfo?ticker=000001&pagesize=10&pagenum=1&appkey=您申请的APPKEY
+
+请求参数
+名称		类型	必填	示例值	描述
+ticker		String	是	000001	输入交易代码，如'000001';或证券简称拼音，如'wx'
+pagesize	Number	否	10	分页大小，最大为30，默认是10
+pagenum		Number	否	1	分页页数，默认是1
+field		String	否		可选参数，用,分隔,默认为空，返回全部字段，不选即为默认值。返回字段见下方
+
+返回示例值
+返回参数可选 格式JSON
+字段 		类型 	描述
+ticker		string	交易代码
+exchangeCD	string	交易市场
+shortNM		string	证券简称
