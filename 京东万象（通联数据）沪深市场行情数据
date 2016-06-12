@@ -1,0 +1,70 @@
+京东万象（通联数据）沪深市场行情数据
+
+标示：getTickRTSnapsh
+接口地址：https://way.jd.com/datayes/getTickRTSnapsh
+请求方式：HTTPS GET POST
+请求示例：https://way.jd.com/datayes/getTickRTSnapsh?securityID=000001.XSHG&appkey=您申请的APPKEY
+
+请求参数
+名称		类型	必填	示例值		描述
+securityID	String	是	000001.XSHG	如果为空，则为全
+
+返回示例值
+返回值可选 格式JSON
+字段		类型	描述
+timestamp	Int64	交易所时间戳
+ticker		string	证券6位代码
+exchangeCD	string	交易所代码
+localTimestamp	Int64	DataYes本地接收时间戳
+dataDate	string	交易日期
+dataTime	string	交易时间
+shortNM	string	证劵简称
+utcOffset	string	UTC 时间偏移
+currencyCD	string	货币代码
+prevClosePrice	double	昨收盘价格
+openPrice	double	今日开盘价
+volume		Int64	成交数量
+value		double	成交金额
+deal		int32	成交笔数
+highPrice	double	最高价格
+lowPrice	double	最低价格
+lastPrice	double	最新价格
+bidBook_price1	double	一档买入价格(指数该字段为空)
+bidBook_volume1	int64	一档买入交易量(指数该字段为空)
+bidBook_price2	double	二档买入价格(指数该字段为空)
+bidBook_volume2	int64	二档买入交易量(指数该字段为空)
+bidBook_price3	double	三档买入价格(指数该字段为空)
+bidBook_volume3	int64	三档买入交易量(指数该字段为空)
+bidBook_price4	double	四档买入价格(指数该字段为空)
+bidBook_volume4	int64	四档买入交易量(指数该字段为空)
+bidBook_price5	double	五档买入价格(指数该字段为空)
+bidBook_volume5	int64	五档买入交易量(指数该字段为空)
+askBook_price1	double	一档卖出价格(指数该字段为空)
+askBook_volume1	int64	一档卖出交易量(指数该字段为空)
+askBook_price2	double	二档卖出价格(指数该字段为空)
+askBook_volume2	int64	二档卖出交易量(指数该字段为空)
+askBook_price3	double	三档卖出价格(指数该字段为空)
+askBook_volume3	int64	三档卖出交易量(指数该字段为空)
+askBook_price4	double	四档卖出价格(指数该字段为空)
+askBook_volume4	int64	四档卖出交易量(指数该字段为空)
+askBook_price5	double	五档卖出价格(指数该字段为空)
+askBook_volume5	int64	五档卖出交易量(指数该字段为空)
+suspension	int16	是否停牌(1表示停牌)
+tradType	int32	交易类型
+IEP		double	参考平衡价
+AggQty		double	集合竞价成交数量
+nominalPrice	double	按盘价/收盘价
+VWAP		double	加权平均价
+change		double	变动 (最新-前收)
+changePct	double	变动率(变动/前收)
+Yield		double	息率
+tradStatus	int32	交易状态
+tradSessionID	int32	标识
+tradSessionSubID	int32	子标识
+tradSessionStatus	int32	状态
+orderType	string	成交单类型，如s：小单，m：中单，l：大单，xl：超大单
+smallOrderValue	double	小单成交金额
+mediumOrderValue	double	中单成交金额
+largeOrderValue	double	大单成交金额
+extraLargeOrderValue	double	超大单成交金额
+totalOrderValue	double	本次成交单总金额
