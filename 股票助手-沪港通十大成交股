@@ -1,0 +1,34 @@
+接口地址：http://data.tehir.cn/url/Api/ApiInterface.ashx
+请求方法：GET
+
+
+请求参数：
+参数名	类型	必填	描述
+flag	string	是	必填填写hht
+date	string	是	查询日期格式yyyy-mm-dd;例如2015-11-20 注有效交易日期
+apikey	string	是	API密钥
+
+
+请求示例：
+http://123.57.249.182:8080/URL/Api/ApiInterface.ashx?apikey=您自己的apikey&date=2015-12-04&flag=hht
+
+
+JSON返回示例：
+{
+	"total":37,//返回行数
+	"success:"true,//成功 true/失败 false
+	"info":"",//返回false时出现系统提示，返回true时为空；例如：“数据读取异常等”
+	"rows":[//数据集合
+		{
+			 "dattrade":"2015-11-20 00:00:00",//交易日期
+			 "numorder":"3",//当日排名
+			 "vc2marcode":"600009",//-股票代码
+			 "vc2name":"上海机场",//股票名称
+			 "numclose":"30.14",//收盘价
+			 "numratio":0.17,//当日涨幅
+			 "numbmount":"93917943",//买入量
+			 "numsmount":"18945178",//卖出量
+			 "numsummount":"112863121"//总成交量
+		}
+	]
+}
